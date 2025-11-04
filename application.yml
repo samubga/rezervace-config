@@ -1,0 +1,20 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,metrics,loggers,configprops
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+    build:
+      enabled: true
+    git:
+      mode: simple
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: config-service
+
+server:
+  port: 8888
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: Centralized Configuration Server for all Rezer Vace microservices.
+    version: 0.0.1-SNAPSHOT
+    environment: local
+  author: CodesBG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env
+  endpoint:
+    health:
+      show-details: always

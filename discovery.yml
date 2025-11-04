@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: discovery-service
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enable-self-preservation: false
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: Eureka Discovery Server for service registration and discovery.
+    version: 0.0.1-SNAPSHOT
+    environment: local
+  author: CodesBG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env
+  endpoint:
+    health:
+      show-details: always
