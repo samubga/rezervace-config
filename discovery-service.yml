@@ -1,16 +1,27 @@
+server:
+  port: 8761
+
 spring:
   application:
     name: discovery-service
-
-server:
-  port: 8761
 
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      defaultZone: ""
   server:
     enable-self-preservation: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
 
 info:
   app:
@@ -19,12 +30,3 @@ info:
     version: 0.0.1-SNAPSHOT
     environment: local
   author: CodesBG
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,env
-  endpoint:
-    health:
-      show-details: always
