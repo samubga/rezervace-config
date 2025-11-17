@@ -1,0 +1,25 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/catalog_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root12344
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.rezervace.bookingservice: DEBUG
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
